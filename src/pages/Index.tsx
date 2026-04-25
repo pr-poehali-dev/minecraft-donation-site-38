@@ -5,6 +5,19 @@ const HERO_IMAGE = 'https://cdn.poehali.dev/projects/a8104276-6a06-4b00-9373-576
 
 const packages = [
   {
+    id: 'hero',
+    name: 'HERO',
+    emoji: '🛡️',
+    price: '39',
+    color: 'gray',
+    borderClass: 'pixel-border-gray',
+    btnClass: 'mc-btn-gray',
+    badge: null,
+    description: 'Стартовый набор',
+    features: [],
+    glow: 'rgba(138, 155, 181, 0.15)',
+  },
+  {
     id: 'vip',
     name: 'VIP',
     emoji: '⚔️',
@@ -328,10 +341,15 @@ export default function Index() {
                 />
 
                 {/* Pixel corner decorations */}
-                <div style={{ position: 'absolute', top: 8, left: 8, width: 8, height: 8, backgroundColor: pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : 'var(--mc-diamond)', opacity: 0.6 }} />
-                <div style={{ position: 'absolute', top: 8, right: 8, width: 8, height: 8, backgroundColor: pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : 'var(--mc-diamond)', opacity: 0.6 }} />
-                <div style={{ position: 'absolute', bottom: 8, left: 8, width: 8, height: 8, backgroundColor: pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : 'var(--mc-diamond)', opacity: 0.6 }} />
-                <div style={{ position: 'absolute', bottom: 8, right: 8, width: 8, height: 8, backgroundColor: pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : 'var(--mc-diamond)', opacity: 0.6 }} />
+                {(() => {
+                  const c = pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : pkg.color === 'diamond' ? 'var(--mc-diamond)' : '#5a6a7e';
+                  return (<>
+                    <div style={{ position: 'absolute', top: 8, left: 8, width: 8, height: 8, backgroundColor: c, opacity: 0.6 }} />
+                    <div style={{ position: 'absolute', top: 8, right: 8, width: 8, height: 8, backgroundColor: c, opacity: 0.6 }} />
+                    <div style={{ position: 'absolute', bottom: 8, left: 8, width: 8, height: 8, backgroundColor: c, opacity: 0.6 }} />
+                    <div style={{ position: 'absolute', bottom: 8, right: 8, width: 8, height: 8, backgroundColor: c, opacity: 0.6 }} />
+                  </>);
+                })()}
 
                 {/* Badge */}
                 {pkg.badge && (
@@ -364,9 +382,7 @@ export default function Index() {
                       style={{
                         fontFamily: "'Press Start 2P', monospace",
                         fontSize: '14px',
-                        ...(pkg.color === 'green' && { color: 'var(--mc-green)' }),
-                        ...(pkg.color === 'gold' && { color: 'var(--mc-gold)' }),
-                        ...(pkg.color === 'diamond' && { color: 'var(--mc-diamond)' }),
+                        color: pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : pkg.color === 'diamond' ? 'var(--mc-diamond)' : '#8a9bb5',
                         textShadow: '2px 2px 0 rgba(0,0,0,0.8)',
                       }}
                     >
@@ -397,9 +413,7 @@ export default function Index() {
                       style={{
                         fontFamily: "'Press Start 2P', monospace",
                         fontSize: '28px',
-                        ...(pkg.color === 'green' && { color: 'var(--mc-green)' }),
-                        ...(pkg.color === 'gold' && { color: 'var(--mc-gold)' }),
-                        ...(pkg.color === 'diamond' && { color: 'var(--mc-diamond)' }),
+                        color: pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : pkg.color === 'diamond' ? 'var(--mc-diamond)' : '#8a9bb5',
                         textShadow: '2px 2px 0 rgba(0,0,0,0.8)',
                       }}
                     >
@@ -436,9 +450,7 @@ export default function Index() {
                           style={{
                             flexShrink: 0,
                             marginTop: '1px',
-                            ...(pkg.color === 'green' && { color: 'var(--mc-green)' }),
-                            ...(pkg.color === 'gold' && { color: 'var(--mc-gold)' }),
-                            ...(pkg.color === 'diamond' && { color: 'var(--mc-diamond)' }),
+                            color: pkg.color === 'green' ? 'var(--mc-green)' : pkg.color === 'gold' ? 'var(--mc-gold)' : pkg.color === 'diamond' ? 'var(--mc-diamond)' : '#8a9bb5',
                             fontFamily: "'Press Start 2P', monospace",
                             fontSize: '8px',
                           }}

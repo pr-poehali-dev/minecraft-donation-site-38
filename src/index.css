@@ -65,6 +65,15 @@
     inset 4px 4px 0 0 rgba(255, 255, 255, 0.15);
 }
 
+.pixel-border-gray {
+  border-color: #4a5568;
+  box-shadow:
+    0 0 0 4px #4a5568,
+    inset -4px -4px 0 0 rgba(0, 0, 0, 0.4),
+    inset 4px 4px 0 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(138, 155, 181, 0.2);
+}
+
 .pixel-border-green {
   border-color: var(--mc-green-dark);
   box-shadow:
@@ -111,6 +120,20 @@
 .mc-btn:active {
   transform: translateY(3px);
   filter: brightness(0.85);
+}
+
+.mc-btn-gray {
+  background-color: #5a6a7e;
+  border-color: #3a4a5c;
+  color: #e0e8f0;
+  box-shadow:
+    inset -3px -3px 0 0 #2a3a4c,
+    inset 3px 3px 0 0 #7a8a9e;
+}
+
+.mc-btn-gray:hover {
+  background-color: #6a7a8e;
+  filter: brightness(1.1);
 }
 
 .mc-btn-green {
